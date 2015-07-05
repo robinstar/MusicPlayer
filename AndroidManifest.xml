@@ -4,18 +4,29 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="21" />
+
     <application
         android:icon="@drawable/ic_launcher"
-        android:label="@string/media_browser_label" >
+        android:label="@string/media_browser_label"
+        android:theme="@style/music_default" >
         <activity
             android:name="AudioMediaBrowserActivity"
-            android:label="@string/media_browser_label" >
+            android:label="@string/media_browser_label"
+            android:theme="@style/music_notitle" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name="com.robin.music.AudioBrowserService"
+            android:exported="false" >
+        </service>
     </application>
 
 </manifest>
